@@ -1,16 +1,18 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Screen1 from '../screens/screen1/screen1';  
-import Screen2 from '../screens/screen2/screen2';
+import Home from '../screens/home/Home';
+import ProjectDetail from '../screens/projectDetail';
+import LandingPage from '../screens/landingPage/LandingPage';
 
 function Routers() {
     return (
-       <Router>
-        <Routes>
-            <Route path="/" element={<Screen1 />} />
-            <Route path="/screen2" element={<Screen2 />} />
-        </Routes>
-       </Router>
+        <Router>
+            <Routes>
+                <Route path="/" element={<LandingPage />} />
+                <Route path='/home' element={<Home />} />
+                <Route path='/projectdetail' element={<ProjectDetail />} />
+            </Routes>
+        </Router>
     )
 }
 

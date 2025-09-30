@@ -1,20 +1,20 @@
 const initialState = {
   loading: false,
-  user: null,
+  home: null,
   error: null,
 };
 
-const userReducer = (state = initialState, action) => {
+const homeReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'FETCH_USER_REQUEST':
+    case 'FETCH_HOME_REQUEST':
       return { ...state, loading: true };
-    case 'FETCH_USER_SUCCESS':
-      return { ...state, loading: false, user: action.payload };
-    case 'FETCH_USER_FAILURE':
+    case 'FETCH_HOME_SUCCESS':
+      return { ...state, loading: false, home: action.payload };
+    case 'FETCH_HOME_FAILURE':
       return { ...state, loading: false, error: action.error };
     default:
       return state;
   }
 };
 
-export default userReducer;
+export default homeReducer;

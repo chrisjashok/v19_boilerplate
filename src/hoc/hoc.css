@@ -1,0 +1,13 @@
+.drawer_box {
+    width: 50;
+}
+
+.drawer_card {
+    margin: 1rem 0 0 0;
+    width: 34vw;
+    max-width: 700;
+    overflow-y: auto;
+    max-Height: 60vh;
+    position: absolute;
+    z-Index: 100
+}

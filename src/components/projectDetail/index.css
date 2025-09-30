@@ -1,0 +1,62 @@
+.overView_root {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(25, 118, 210, 0.274);
+    height: fit-content;
+    width: 70%;
+    border-radius: 0.5em;
+    padding: 1rem;
+     border: 1px solid rgba(25, 118, 210, 0.11);
+    box-shadow:0 0 1.2rem 0  rgba(25, 118, 210, 0.37);
+}
+
+.box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 6rem;
+    width: 100%;
+    /* border: 2px solid red; */
+    padding: 0 1rem 0 1rem;
+}
+
+.title_section {
+    display: flex;
+    flex-direction:column;
+    height: 5rem;
+    justify-content: center;
+    align-items: flex-start;
+       /* border: 2px solid red; */
+
+}
+
+.iconbtn_section {
+    display: flex;
+    /* flex-direction: row; */
+    position: inherit;
+    height: 5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.img_section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20rem;
+    width: 40rem;
+}
+
+
+.about_root{
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(25, 118, 210, 0.274);
+    height: fit-content;
+    width: 70%;
+    border-radius: 0.5em;
+    padding: 1rem;
+    border: 1px solid rgba(25, 118, 210, 0.164);
+    box-shadow:0 0 1.2rem 0  rgba(25, 118, 210, 0.37);
+}

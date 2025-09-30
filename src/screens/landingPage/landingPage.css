@@ -1,0 +1,33 @@
+
+ .root {
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+        /* padding: 2rem 3.5rem 0 3.5rem; */
+    }
+.floating-btn {
+    position: absolute;
+    bottom: 90vh;
+    left: 47vw;
+    transform: rotate(270deg);
+    z-index: 100;
+    background-color: #555 !important;
+    color: #fff !important;
+    clip-path: polygon(5% 0%, 93% 0%, 100% 100%, 0% 100%);
+    animation: btn_animation_x 1s ease-in-out infinite;
+}
+
+.item {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+.floating-btn:hover {
+    background-color: #1976d2 !important;
+    color: #fff;
+    clip-path: polygon(5% 0%, 93% 0%, 100% 100%, 0% 100%);
+    animation: btn_animation_x 1s ease-in-out none;
+    left: 91.8vw;
+}

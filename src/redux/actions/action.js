@@ -1,13 +1,14 @@
-export const fetchUser = () => {
+export const fetchHome = () => {
   return async (dispatch) => {
-    dispatch({ type: 'FETCH_USER_REQUEST' });
+    dispatch({ type: 'FETCH_HOME_REQUEST' });
 
     try {
-      const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+      const response = await fetch('http://localhost:3000/getproperties');
       const data = await response.json();
-      dispatch({ type: 'FETCH_USER_SUCCESS', payload: data });
+      
+      dispatch({ type: 'FETCH_HOME_SUCCESS', payload: data[0] });
     } catch (error) {
-      dispatch({ type: 'FETCH_USER_FAILURE', error: error.message });
+      dispatch({ type: 'FETCH_HOME_FAILURE', error: error.message });
     }
   };
 };
