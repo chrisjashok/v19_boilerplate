@@ -9,8 +9,7 @@ import {
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 
-const ImageSlider = React.forwardRef(({ images = [], interval = 3000 },ref) => {
-  console.log('images',JSON.stringify(images))
+const ImageSlider = React.forwardRef(({ images = [], interval = 3000 }, ref) => {
   const theme = useTheme();
   const [activeStep, setActiveStep] = useState(0);
   const maxSteps = images.length;
@@ -45,13 +44,13 @@ const ImageSlider = React.forwardRef(({ images = [], interval = 3000 },ref) => {
       <Box
         // key={item.label}
         sx={{
-          justifyContent:'center',
+          justifyContent: 'center',
           width: type === 'center' ? '60%' : '20%',
           flexShrink: 0,
           textAlign: 'center',
           // opacity,
           transition: 'all 0.3s ease',
-          height:'100%',
+          height: '100%',
         }}
         ref={ref}
       >
@@ -69,16 +68,21 @@ const ImageSlider = React.forwardRef(({ images = [], interval = 3000 },ref) => {
           {/* {isComponent ? (
             <item.img width="100%" height="100%" />
           ) : ( */}
-            <Box
+          <Box
               component="img"
-              src={item.path}
-              alt={item.label}
+              src={item?.path}
+              alt={item?.label}
               sx={{
                 width: '100%',
                 height: '100%',
                 objectFit: 'contain',
               }}
             />
+          {/* <img
+            src={item?.path}
+            alt={item?.label}
+            style={{width:'100%', height:'100%',objectFit:'contain'}}
+          /> */}
           {/* )} */}
         </Box>
       </Box>
@@ -86,9 +90,9 @@ const ImageSlider = React.forwardRef(({ images = [], interval = 3000 },ref) => {
   };
 
   return (
-    <Box sx={{  maxWidth: '100%', overflow: 'hidden',margin:'5rem 0 5rem 0'}}>
+    <Box sx={{ maxWidth: '100%', overflow: 'hidden', margin: '5rem 0 5rem 0' }}>
       {/* Title */}
-      <Box sx={{ textAlign: 'center',margin:'1rem 0 2rem 0' }}>
+      <Box sx={{ textAlign: 'center', margin: '1rem 0 2rem 0' }}>
         <Typography
           variant="h4"
           sx={{ fontStyle: 'italic', fontWeight: 600, color: '#1976d2' }}
@@ -105,11 +109,11 @@ const ImageSlider = React.forwardRef(({ images = [], interval = 3000 },ref) => {
           justifyContent: 'center',
           alignItems: 'center',
           overflow: 'hidden',
-          height:'65vh'
+          height: '65vh'
         }}
       >
         {/* Left (1/3 visible) */}
-        <Box sx={{ transform: 'translateX(0%)',}}>
+        <Box sx={{ transform: 'translateX(0%)', }}>
           {renderImageCard(getImageAt(activeStep - 1), 'side')}
         </Box>
 
@@ -117,7 +121,7 @@ const ImageSlider = React.forwardRef(({ images = [], interval = 3000 },ref) => {
         <Box >{renderImageCard(getImageAt(activeStep), 'center')}</Box>
 
         {/* Right (1/3 visible) */}
-        <Box sx={{ transform: 'translateX(0%)'}}>
+        <Box sx={{ transform: 'translateX(0%)' }}>
           {renderImageCard(getImageAt(activeStep + 1), 'side')}
         </Box>
       </Box>

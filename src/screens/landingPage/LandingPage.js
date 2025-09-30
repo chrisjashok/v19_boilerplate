@@ -40,31 +40,8 @@ export default function LandingPage() {
 
 
   useEffect(() => {
-    console.log('home',home?.campus_amenities)
+    console.log('home',home)
   }, [home])
-
-  const Bannerimg = [
-    { img: BanquetHall, label: 'BanquetHall' },
-    { img: IndoorCourt, label: 'IndoorCourt' },
-    { img: PrivateTheater, label: 'Gym' },
-    { img: YogaDeck, label: 'YogaDeck' },
-    { img: Gym, label: 'Gym' },
-
-    // ...
-  ];
-
-
-
-  const Amenities = [
-    { Icon: Atm, label: '24/7 ATM' },
-    { Icon: Lift, label: 'Automatic Lift' },
-    { Icon: Cctv, label: 'CCTV surveillance' },
-    { Icon: Ev, label: 'EV- charger' },
-    { Icon: Fire, label: 'Fire protection' },
-    { Icon: Rfid, label: 'RFID-TailGate' },
-    // Add more...
-  ]
-
 
 
   const sectionRefs = useRef({});
@@ -89,13 +66,11 @@ export default function LandingPage() {
   return (
     <Grid container sx={{ display: 'flex', justifyContent: 'center' }} >
       <TopBar handleClick={scrollToSection} />
-      <Banner />
+      <Banner src={home?.banner_img} />
       <AddUser />
-      {/* <ImageSlider images={Bannerimg} ref={(el) => { sectionRefs.current['plans'] = el; }} /> */}
       <ImageSlider images={home?.campus_amenities} ref={(el) => { sectionRefs.current['plans'] = el; }} />
-      {/* <AmenitiesIcons cards={Amenities} ref={(el) => (sectionRefs.current['amenities'] = el)} /> */}
       <AmenitiesIcons cards={home?.amenities} ref={(el) => (sectionRefs.current['amenities'] = el)} />
-      <LocationSection ref={(el) => (sectionRefs.current['location'] = el)} />
+      <LocationSection data={home?.location[0]} ref={(el) => (sectionRefs.current['location'] = el)} />
       <Footer ref={(el) => (sectionRefs.current['about'] = el)} />
     </Grid>
   )

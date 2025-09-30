@@ -5,8 +5,6 @@ import { Box, Grid, Typography } from '@mui/material';
 const AmenitiesIcons = React.forwardRef(({ title = 'Amenities', cards = [] }, ref) => {
 
   const [visible, setVisible] = useState(false);
-  const baseUrl = 'file:///D:'
-
 
   useEffect(() => {
     const timeout = setTimeout(() => setVisible(true), 100);
@@ -52,7 +50,7 @@ const AmenitiesIcons = React.forwardRef(({ title = 'Amenities', cards = [] }, re
             }}
           >
             {/* 🔹 Icon (SVG Component or Image) */}
-            {card.Icon ? (
+            {/* {card.Icon ? (
               <Box
                 sx={{
                   width: 64,
@@ -67,11 +65,11 @@ const AmenitiesIcons = React.forwardRef(({ title = 'Amenities', cards = [] }, re
                 <card.Icon width="100%" height="100%" />
                 
               </Box>
-            ) : (
+            ) : ( */}
               <Box
                 component="img"
-                src={`${baseUrl}${card.path}`}
-                alt={card.label}
+                src={card?.path}
+                alt={card?.label}
                 sx={{
                   width: 64,
                   height: 64,
@@ -80,11 +78,11 @@ const AmenitiesIcons = React.forwardRef(({ title = 'Amenities', cards = [] }, re
                   objectFit: 'contain',
                 }}
               />
-            )}
+            {/* )} */}
 
             {/* 🔹 Label */}
             <Typography variant="subtitle1" fontWeight="500">
-              {card.label}
+              {card?.label}
             </Typography>
           </Grid>
         ))}
