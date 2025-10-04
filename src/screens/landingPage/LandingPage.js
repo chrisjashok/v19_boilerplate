@@ -4,20 +4,6 @@ import TopBar from '../../components/landingPage/TopBar'
 import ImageSlider from '../../components/landingPage/imageSlider'
 import AmenitiesIcons from '../../components/landingPage/amenitiesIcons';
 // import logo1 from '../../assets/Icon/atm.svg'
-
-import { ReactComponent as Atm } from '../../assets/Icon/atm.svg';
-import { ReactComponent as Lift } from '../../assets/Icon/automatic-lifts.svg';
-import { ReactComponent as Cctv } from '../../assets/Icon/cctv.svg';
-import { ReactComponent as Ev } from '../../assets/Icon/ev-charging.svg';
-import { ReactComponent as Fire } from '../../assets/Icon/fire-hydrant.svg';
-import { ReactComponent as Rfid } from '../../assets/Icon/rfid-boom.svg';
-import { ReactComponent as Water } from '../../assets/Icon/ev-charging.svg';
-
-import Gym from '../../assets/images/Gym.png'
-import BanquetHall from '../../assets/images/BanquetHall.png'
-import IndoorCourt from '../../assets/images/IndoorCourt.png'
-import PrivateTheater from '../../assets/images/PrivateTheater.png'
-import YogaDeck from '../../assets/images/YogaDeck.png'
 import LocationSection from '../../components/landingPage/locationSection';
 import { Grid } from '@mui/material';
 import Footer from '../../components/landingPage/Footer';
@@ -33,15 +19,13 @@ export default function LandingPage() {
 
   const { home, /*loading, /*error*/ } = useSelector((state) => state.user);
 
+  
+
   useEffect(() => {
     dispatch(fetchHome());
 
   }, [dispatch]);
 
-
-  useEffect(() => {
-    console.log('home',home)
-  }, [home])
 
 
   const sectionRefs = useRef({});
@@ -49,7 +33,7 @@ export default function LandingPage() {
   const scrollToSection = (sectionId) => {
     const section = sectionRefs.current[sectionId];
     if (section) {
-      const topOffset = 200; // height of your TopBar in px
+      const topOffset = 250; // height of your TopBar in px
       const elementPosition = section.getBoundingClientRect().top + window.scrollY;
       const offsetPosition = elementPosition - topOffset;
 

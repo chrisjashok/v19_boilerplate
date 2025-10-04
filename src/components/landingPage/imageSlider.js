@@ -8,6 +8,7 @@ import {
 } from '@mui/material';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
+import './index.css'
 
 const ImageSlider = React.forwardRef(({ images = [], interval = 3000 }, ref) => {
   const theme = useTheme();
@@ -43,15 +44,8 @@ const ImageSlider = React.forwardRef(({ images = [], interval = 3000 }, ref) => 
     return (
       <Box
         // key={item.label}
-        sx={{
-          justifyContent: 'center',
-          width: type === 'center' ? '60%' : '20%',
-          flexShrink: 0,
-          textAlign: 'center',
-          // opacity,
-          transition: 'all 0.3s ease',
-          height: '100%',
-        }}
+        className='slider-img-container'
+        sx={{ width: type === 'center' ? '60%' : '20%', opacity }}
         ref={ref}
       >
         <Box
@@ -65,32 +59,25 @@ const ImageSlider = React.forwardRef(({ images = [], interval = 3000 }, ref) => 
             justifyContent: 'center',
           }}
         >
-          {/* {isComponent ? (
-            <item.img width="100%" height="100%" />
-          ) : ( */}
+
           <Box
-              component="img"
-              src={item?.path}
-              alt={item?.label}
-              sx={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'contain',
-              }}
-            />
-          {/* <img
+            component="img"
             src={item?.path}
             alt={item?.label}
-            style={{width:'100%', height:'100%',objectFit:'contain'}}
-          /> */}
-          {/* )} */}
+            sx={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+            }}
+          />
+
         </Box>
       </Box>
     );
   };
 
   return (
-    <Box sx={{ maxWidth: '100%', overflow: 'hidden', margin: '5rem 0 5rem 0' }}>
+    <Box sx={{ display:'flex',flexDirection:'column', height:'100vh', justifyContent:'center', alignItems:'center', maxWidth: '100%', overflow: 'hidden', margin: '7rem 0 5rem 0' }}>
       {/* Title */}
       <Box sx={{ textAlign: 'center', margin: '1rem 0 2rem 0' }}>
         <Typography

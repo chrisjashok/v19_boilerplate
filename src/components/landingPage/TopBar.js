@@ -23,7 +23,7 @@ export default function TopBar(params) {
                     sx={{
                         fontFamily: '"Roboto", "Helvetica", "Arial", serif',
                         fontWeight: 700,
-                        fontSize: '1rem',
+                        fontSize: '0.9rem',
                         textTransform: 'uppercase',
                         fontStyle: 'normal',
                         letterSpacing: '0.5px',

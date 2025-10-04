@@ -12,7 +12,7 @@ const AmenitiesIcons = React.forwardRef(({ title = 'Amenities', cards = [] }, re
   }, []);
 
   return (
-    <Box sx={{ width: '100%', height: '100vh' }} ref={ref}>
+    <Box  sx={{ width: '80%', height: '100vh', display:'flex', flexDirection:'column' }} ref={ref}>
       {/* 🔹 Title */}
       <Typography
         variant="h4"
@@ -29,9 +29,9 @@ const AmenitiesIcons = React.forwardRef(({ title = 'Amenities', cards = [] }, re
       {/* 🔹 Icon Grid */}
       <Grid
         container
-        spacing={3}
-        columns={12}
-        sx={{ justifyContent: 'space-evenly' }}
+        spacing={{lg:20}}
+        columns={5}
+        sx={{ justifyContent: 'space-evenly',margin:'5rem' }}
       >
         {cards.map((card, index) =>
 
