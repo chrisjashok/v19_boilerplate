@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import {
   Box,
-  Button,
   Typography,
-  MobileStepper,
-  useTheme,
 } from '@mui/material';
-import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
+// import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
+// import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import './index.css'
 
 const ImageSlider = React.forwardRef(({ images = [], interval = 3000 }, ref) => {
-  const theme = useTheme();
+  // const theme = useTheme();
   const [activeStep, setActiveStep] = useState(0);
   const maxSteps = images.length;
 
@@ -27,18 +24,16 @@ const ImageSlider = React.forwardRef(({ images = [], interval = 3000 }, ref) => 
     return () => clearInterval(timer);
   }, [interval, maxSteps]);
 
-  const handleNext = () => {
-    setActiveStep((prev) => (prev + 1) % maxSteps);
-  };
+  // const handleNext = () => {
+  //   setActiveStep((prev) => (prev + 1) % maxSteps);
+  // };
 
-  const handleBack = () => {
-    setActiveStep((prev) => (prev - 1 + maxSteps) % maxSteps);
-  };
+  // const handleBack = () => {
+  //   setActiveStep((prev) => (prev - 1 + maxSteps) % maxSteps);
+  // };
 
   const renderImageCard = (item, type = 'side') => {
-    //  const isComponent = typeof item.img === 'function';
-
-    const size = type === 'center' ? 900 : 450;
+    const size = type === 'center' ? '100vh' : '100vh'; // want's to change the side image size, change the else value
     const opacity = type === 'center' ? 1 : 0.6;
 
     return (
@@ -46,17 +41,19 @@ const ImageSlider = React.forwardRef(({ images = [], interval = 3000 }, ref) => 
         // key={item.label}
         className='slider-img-container'
         sx={{ width: type === 'center' ? '60%' : '20%', opacity }}
+        // sx={{ width: '10%',opacity}}
         ref={ref}
       >
         <Box
           sx={{
             width: size,
-            height: size,
+            height: '100%',
             // mx: 'auto',
             // mb: 1,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
+
           }}
         >
 
@@ -65,7 +62,7 @@ const ImageSlider = React.forwardRef(({ images = [], interval = 3000 }, ref) => 
             src={item?.path}
             alt={item?.label}
             sx={{
-              width: '100%',
+              width: '97%',
               height: '100%',
               objectFit: 'contain',
             }}
@@ -77,9 +74,9 @@ const ImageSlider = React.forwardRef(({ images = [], interval = 3000 }, ref) => 
   };
 
   return (
-    <Box sx={{ display:'flex',flexDirection:'column', height:'100vh', justifyContent:'center', alignItems:'center', maxWidth: '100%', overflow: 'hidden', margin: '7rem 0 5rem 0' }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', height: '90vh', justifyContent: 'flex-end', alignItems: 'center', maxWidth: '100%', overflow: 'hidden', }}>
       {/* Title */}
-      <Box sx={{ textAlign: 'center', margin: '1rem 0 2rem 0' }}>
+      <Box sx={{ textAlign: 'center', margin: '0 0 1rem 0' }}>
         <Typography
           variant="h4"
           sx={{ fontStyle: 'italic', fontWeight: 600, color: '#1976d2' }}
@@ -96,11 +93,11 @@ const ImageSlider = React.forwardRef(({ images = [], interval = 3000 }, ref) => 
           justifyContent: 'center',
           alignItems: 'center',
           overflow: 'hidden',
-          height: '65vh'
+          height: '65vh',
         }}
       >
         {/* Left (1/3 visible) */}
-        <Box sx={{ transform: 'translateX(0%)', }}>
+        <Box sx={{ transform: 'translateX(0%)' }}>
           {renderImageCard(getImageAt(activeStep - 1), 'side')}
         </Box>
 
@@ -114,7 +111,7 @@ const ImageSlider = React.forwardRef(({ images = [], interval = 3000 }, ref) => 
       </Box>
 
       {/* Stepper */}
-      <MobileStepper
+      {/* <MobileStepper
         steps={maxSteps}
         position="static"
         activeStep={activeStep}
@@ -128,7 +125,7 @@ const ImageSlider = React.forwardRef(({ images = [], interval = 3000 }, ref) => 
             {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
           </Button>
         }
-      />
+      /> */}
     </Box>
   );
 });

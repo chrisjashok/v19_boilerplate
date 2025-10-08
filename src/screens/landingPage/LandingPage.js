@@ -10,6 +10,9 @@ import Footer from '../../components/landingPage/Footer';
 import AddUser from '../../components/landingPage/addUser';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchHome } from '../../redux/actions/action';
+import NearByPlaces from '../../components/landingPage/nearbyplaces';
+import DynamicAccordions from '../../components/landingPage/dynamicaAcordions';
+import './landingPage.css'
 
 
 
@@ -19,7 +22,7 @@ export default function LandingPage() {
 
   const { home, /*loading, /*error*/ } = useSelector((state) => state.user);
 
-  
+
 
   useEffect(() => {
     dispatch(fetchHome());
@@ -48,13 +51,15 @@ export default function LandingPage() {
 
 
   return (
-    <Grid container sx={{ display: 'flex', justifyContent: 'center' }} >
+    <Grid container columns={{ xs: 12, sm: 12, md: 12 }} className='landingpage-root' >
       <TopBar handleClick={scrollToSection} />
       <Banner src={home?.banner_img} />
       <AddUser />
       <ImageSlider images={home?.campus_amenities} ref={(el) => { sectionRefs.current['plans'] = el; }} />
       <AmenitiesIcons cards={home?.amenities} ref={(el) => (sectionRefs.current['amenities'] = el)} />
       <LocationSection data={home?.location[0]} ref={(el) => (sectionRefs.current['location'] = el)} />
+      <NearByPlaces />
+      <DynamicAccordions />
       <Footer ref={(el) => (sectionRefs.current['about'] = el)} />
     </Grid>
   )
