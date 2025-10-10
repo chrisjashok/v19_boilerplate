@@ -6,7 +6,7 @@ export const fetchHome = () => {
     dispatch({ type: 'FETCH_HOME_REQUEST' });
 
     try {
-      const response = await axiosInstance.get('getproperties');
+      const response = await axiosInstance.get('api/getproperties');
       const data = await response?.data;
       dispatch({ type: 'FETCH_HOME_SUCCESS', payload: data[0] });
     } catch (error) {
@@ -19,7 +19,7 @@ export const createUser = (params)=>{
    return async (dispatch)=>{
     dispatch({type:'CREATE_USER_REQUEST'});
     try{
-      const response = await axiosInstance.post('postuser',params);
+      const response = await axiosInstance.post('api/postuser',params);
       const data = await response?.data;
       toast.success("Success")
       dispatch({ type: 'CREATE_USER_SUCCESS', payload: data});

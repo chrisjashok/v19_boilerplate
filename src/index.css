@@ -1,8 +1,24 @@
 body {
   margin: 0;
-  font-family: 'playfairDisplay', 'PlayfairDisplayLocal', 'playfairDisplay-Bold', 'PlayfairDisplay-Medium', 'PlayfairDisplay-Light', 'PlayfairDisplay-Thin', 'PlayfairDisplay-Italic', 'PlayfairDisplay-BoldItalic', 'PlayfairDisplay-MediumItalic', 'PlayfairDisplay-LightItalic', 'PlayfairDisplay-ThinItalic', 'RobotoLocal', 'Roboto-Bold', 'Roboto-Medium', 'Roboto-Light', 'Roboto-Thin', 'Roboto-Italic','Roboto-BoldItalic','Roboto-MediumItalic','Roboto-LightItalic','Roboto-ThinItalic';
+  /* font-family: 'playfairDisplay', 'PlayfairDisplayLocal', 'playfairDisplay-Bold', 'PlayfairDisplay-Medium', 'PlayfairDisplay-Light', 'PlayfairDisplay-Thin', 'PlayfairDisplay-Italic', 'PlayfairDisplay-BoldItalic', 'PlayfairDisplay-MediumItalic', 'PlayfairDisplay-LightItalic', 'PlayfairDisplay-ThinItalic', 'RobotoLocal', 'Roboto-Bold', 'Roboto-Medium', 'Roboto-Light', 'Roboto-Thin', 'Roboto-Italic','Roboto-BoldItalic','Roboto-MediumItalic','Roboto-LightItalic','Roboto-ThinItalic'; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  font-family: "Lato", sans-serif !important;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: bold !important;
 }
 
 code {

@@ -27,12 +27,12 @@ const Footer = React.forwardRef((props, ref) => {
       <Grid size={{ xs: 3, sm: 3, md: 3, lg: 2 }} sx={{ display: 'flex', flexDirection:'column', justifyContent: 'flex-start', alignItems: 'flex-end', height: '70%',  }} >
         <Grid size={12} sx={{display:'flex',flexDirection:'row',justifyContent:'space-between' }}>
           <img src={logo} alt={logo} className='footer-logo' />
-          <Typography className='footer-title'>ABC BUILDERS</Typography>
+          {/* <Typography className='footer-title'>ABC BUILDERS</Typography> */}
         </Grid>
-        <Grid size={6.3} sx={{display:'flex', flexDirection:'row',justifyContent:'space-between',alignItems:'center'}}>
+        {/* <Grid size={6.3} sx={{display:'flex', flexDirection:'row',justifyContent:'space-between',alignItems:'center'}}>
           <LocalPhoneIcon className='footer-content' />
           <Typography className='footer-content'>+91 9876543210</Typography>
-        </Grid>
+        </Grid> */}
       </Grid>
       <Divider orientation='vertical' variant='middle' flexItem />
       <Grid size={{ xs: 3, sm: 3, md: 6, lg: 6 }} sx={{ height: '100%', height: '70%', }} >

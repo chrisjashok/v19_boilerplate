@@ -33,7 +33,7 @@ const ImageSlider = React.forwardRef(({ images = [], interval = 3000 }, ref) => 
   // };
 
   const renderImageCard = (item, type = 'side') => {
-    const size = type === 'center' ? '100vh' : '100vh'; // want's to change the side image size, change the else value
+    const size = type === 'center' ? '75vW' : '75VW'; // want's to change the side image size, change the else value
     const opacity = type === 'center' ? 1 : 0.6;
 
     return (
@@ -74,14 +74,14 @@ const ImageSlider = React.forwardRef(({ images = [], interval = 3000 }, ref) => 
   };
 
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', height: '90vh', justifyContent: 'flex-end', alignItems: 'center', maxWidth: '100%', overflow: 'hidden', }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', height: '110vh', justifyContent: 'flex-end', alignItems: 'center', maxWidth: '100%', overflow: 'hidden',margin:'7rem 0 0 0' }}>
       {/* Title */}
       <Box sx={{ textAlign: 'center', margin: '0 0 1rem 0' }}>
         <Typography
           variant="h4"
-          sx={{ fontStyle: 'italic', fontWeight: 600, color: '#1976d2' }}
+          sx={{  fontWeight: 600, color: '#9a3f81' }}
         >
-          Campus Amenities
+          Clubhouse Amenities
         </Typography>
       </Box>
 
@@ -93,7 +93,7 @@ const ImageSlider = React.forwardRef(({ images = [], interval = 3000 }, ref) => 
           justifyContent: 'center',
           alignItems: 'center',
           overflow: 'hidden',
-          height: '65vh',
+          height: '100vh',
         }}
       >
         {/* Left (1/3 visible) */}

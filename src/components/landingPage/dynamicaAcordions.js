@@ -60,6 +60,9 @@ function DynamicAccordions() {
 
     return (
         <Grid size={{ md: 10 }} sx={{ margin: '3rem 0 5rem 0' }}>
+            <Grid size={12} sx={{display:"flex",flexDirection:"row",justifyContent:'center',alignItems:'center',margin:'2rem 0 3rem 0'}}>
+                <Typography variant="h4" className="title">Specifications</Typography>
+            </Grid>
             {accordionData.map((item) => (
                 <Accordion
                     key={item.id}

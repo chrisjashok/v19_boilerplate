@@ -126,3 +126,9 @@
   font-weight: 100;
   font-style: italic;
 }
+
+
+body {
+  font-family: "Montserrat", sans-serif !important;
+  font-style: normal;
+}

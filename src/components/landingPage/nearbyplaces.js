@@ -21,8 +21,8 @@ export default function NearByPlaces() {
 
   // console.log('gridHeight',height)
   return (
-    <Grid container size={{ xs: 10, sm: 8, md: 7, lg: 10 }} className='nearbyplace-root'  >
-      <Grid size={{ xs: 10, sm: 3, md: 4, lg:2.6 }} className='nearbyplace-titlecontainer'>
+    <Grid container size={{ xs: 10, sm: 8, md: 10, lg: 10 }} className='nearbyplace-root'  >
+      <Grid size={{ xs: 10, sm: 3, md: 4, lg:3 }} className='nearbyplace-titlecontainer'>
         <Typography variant='h4' className='nearbyplace-title' >Perfectly positioned</Typography>
         <Typography variant='h5' className='nearbyplace-subtitle'>nearby places</Typography>
       </Grid>
