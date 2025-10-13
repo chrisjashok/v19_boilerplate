@@ -1,43 +1,36 @@
-import { Grid } from "@mui/material";
-import "./projectDetail.css";
+import Grid from "@mui/material/Grid";
 import React from "react";
+import ImgCardList from "../../components/moreDetail/ImgCardList";
 // import OverView from "../../components/projectDetail/OverView";
 // import AboutPorject from "../../components/projectDetail/AboutPorject";
-import ImgCardList from "../../components/moreDetail/ImgCardList";
 
 export default function ProjectDetail() {
-//   const data = {
-//     price: 12.7,
-//     price_scale: "Lacs",
-//     description: "3 BHK Flat 1200 Sq-ft For Rent in Apats, Kodambakkam,Chennai",
-//     property_details: {
-//       sqft: 1400,
-//       developers: "ABC Developers",
-//       project: "ABC Villa's",
-//       transaction_Type: "New property",
-//       Property_status: "Ready to occupy",
-//       lift: 1,
-//       furnished_status: "Furnished",
-//     },
-//     images: [
-//         { img: LivingRoom, lable: 'LivingRoom' },
-//         { img: Kitchen, lable: 'Kitchen' },
-//         { img: BedRoom, lable: 'BedRoom' },
-//         { img: Layout, lable: 'Layout' },
-//     ],
-//     project_detail: {
-//       developer: "ABC promoters",
-//       configurations: "By ABC Developers india ltd",
-//       tower: 1,
-//       unit: 10,
-//     },
-//   };
-
   return (
-    <Grid container spacing={2} className="root">
+    <Grid
+      container
+      size={12}
+      spacing={5}
+      sx={{
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+        height:'100vh',
+        backgroundColor:'#F9F6F3'
+      }}
+    >
+      <Grid size={12}>
+        
+      </Grid>
       {/* <OverView value={data}  />
             <AboutPorject/> */}
-      <ImgCardList  />
+      <Grid container size={8} spacing={3} sx={{display:'flex', flexDirection:'row'}} >
+        {Array(6)
+          .fill()
+          .map(() => {
+            return <ImgCardList />;
+          })}
+      </Grid>
     </Grid>
   );
 }
