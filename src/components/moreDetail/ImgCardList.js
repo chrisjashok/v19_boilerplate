@@ -18,7 +18,7 @@ export default function ImgCardList() {
             alignItems: "center",
           }}
         >
-          <Typography variant="h6" component="div">
+          <Typography variant="h6" color="#9a3f81" >
             12 Lacs
           </Typography>
           <Typography variant="subtitle2" color="primary">
@@ -31,8 +31,8 @@ export default function ImgCardList() {
           </Typography>
         </Grid>
         <Grid container size={12} spacing={1} >
-          <Chip icon={<BedIcon />} label="2 Bedroom" variant="outlined" />
-          <Chip icon={<BathtubIcon />} label="2 Bathrooms" variant="outlined" />
+          <Chip icon={<BedIcon />} label="2" variant="outlined" sx={{border:'1px solid #9a3f81'}}  />
+          <Chip icon={<BathtubIcon />} label="2" variant="outlined" sx={{border:'1px solid #9a3f81'}} />
         </Grid>
       </>
     );
@@ -42,10 +42,10 @@ export default function ImgCardList() {
     <Grid container>
       <Customcard
         imgURL="https://github.com/chrisjashok/assets/blob/main/images/YogaDeck.png?raw=true"
-        sx={{ width: "25rem" }}
+        sx={{ width: "25rem",border:'1px solid #9a3f81', }}
         imgSize="large"
         cardContent={cardContent}
-        title="lizard"
+        title="villa"
       />
     </Grid>
   );
