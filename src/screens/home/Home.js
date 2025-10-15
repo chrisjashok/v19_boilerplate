@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import { useState } from 'react'
 import "./home.css"
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchUser } from '../../redux/actions/action';
 import Grid from '@mui/material/Grid'
 import Topbar from '../../components/home/Topbar';
 import Herosection from '../../components/home/Herosection';
@@ -12,8 +10,11 @@ import Footer from '../../components/home/Footer';
 import AddUser from '../../components/home/AddUser';
 import { Button } from '@mui/material';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
+import { useLocation } from 'react-router-dom';
 
-function Home() {
+function Home(props) {
+  const data = useLocation()
+  console.log('home',data.state)
   const [open, setOpen] = useState(true);
 
   // const dispatch = useDispatch();

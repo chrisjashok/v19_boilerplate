@@ -51,7 +51,7 @@ export default function TopBar(params) {
           size="small"
           variant="outlined"
         //   className="button"
-          onClick={() => nav("projectdetail")}
+          onClick={() => nav("projectlist")}
           sx={{
             fontFamily: '"Montserrat", sans-serif',
             fontWeight: 600,

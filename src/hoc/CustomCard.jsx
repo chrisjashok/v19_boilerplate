@@ -1,4 +1,4 @@
-import { CardActions } from "@mui/material";
+import { CardActionArea, CardActions } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -13,6 +13,7 @@ import CardMedia from "@mui/material/CardMedia";
  * @typedef {'small' | 'medium' | 'large'} imgSizeType
  * @typedef {} cardContentType
  * @typedef {} cardActionsType
+ * @typedef {} navigateToType
  */
 
 /**
@@ -26,6 +27,7 @@ import CardMedia from "@mui/material/CardMedia";
  * imgSize?:imgSizeType,
  * cardContent?:()=>cardContentType
  * cardActions?:()=>cardActionsType
+ * navigateTo?:({(event:import("react").ChangeEvent<{}>)=> void})=> navigateToType
  * }} props
  */
 
@@ -38,34 +40,38 @@ function Customcard(props) {
     imgURL = "",
     imgSize = "medium",
     cardContent,
-    cardActions
+    cardActions,
+    navigateTo,
   } = props;
 
   const classes = myStyles;
 
   return (
     <Card style={style ?? null} className={className ?? null} sx={sx ?? null}>
-      <CardMedia
-        image={imgURL}
-        title={title}
-        sx={
-          imgSize === "medium"
-            ? classes.cardmedia_mid
-            : imgSize === "small"
-            ? classes.cardmedia_sml
-            : classes.cardmedia_lrg
-        }
-      />
-      <CardContent>
-        {cardContent && typeof cardContent === "function"
-          ? cardContent()
-          : null}
-      </CardContent>
-      <CardActions>
-        {cardActions && typeof cardActions === "function"
-          ? cardActions()
-          : null}
-      </CardActions>
+      <CardActionArea onClick={navigateTo}>
+        <CardMedia
+          image={imgURL}
+          title={title}
+          sx={
+            imgSize === "medium"
+              ? classes.cardmedia_mid
+              : imgSize === "small"
+              ? classes.cardmedia_sml
+              : classes.cardmedia_lrg
+          }
+        />
+        <CardContent>
+          {cardContent && typeof cardContent === "function"
+            ? cardContent()
+            : null}
+        </CardContent>
+
+        <CardActions>
+          {cardActions && typeof cardActions === "function"
+            ? cardActions()
+            : null}
+        </CardActions>
+      </CardActionArea>
     </Card>
   );
 }

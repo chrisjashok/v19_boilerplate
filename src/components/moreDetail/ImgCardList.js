@@ -5,7 +5,7 @@ import { Chip, Typography } from "@mui/material";
 import BedIcon from '@mui/icons-material/Bed';
 import BathtubIcon from "@mui/icons-material/Bathtub";
 
-export default function ImgCardList() {
+export default function ImgCardList({data,onNavigate}) {
   const cardContent = () => {
     return (
       <>
@@ -19,33 +19,34 @@ export default function ImgCardList() {
           }}
         >
           <Typography variant="h6" color="#9a3f81" >
-            12 Lacs
+            {data?.price} Lacs
           </Typography>
           <Typography variant="subtitle2" color="primary">
-            #001
+            #{data?.id}
           </Typography>
         </Grid>
         <Grid size={12}>
           <Typography variant="caption" color="textDisabled">
-            2 BHK home in near guindy
+            {data?.description}
           </Typography>
         </Grid>
         <Grid container size={12} spacing={1} >
-          <Chip icon={<BedIcon />} label="2" variant="outlined" sx={{border:'1px solid #9a3f81'}}  />
-          <Chip icon={<BathtubIcon />} label="2" variant="outlined" sx={{border:'1px solid #9a3f81'}} />
+          <Chip icon={<BedIcon />} label={data?.bed} variant="outlined" sx={{border:'1px solid #9a3f81'}}  />
+          <Chip icon={<BathtubIcon />} label={data?.bath} variant="outlined" sx={{border:'1px solid #9a3f81'}} />
         </Grid>
       </>
     );
   };
 
   return (
-    <Grid container>
+    <Grid container  >
       <Customcard
         imgURL="https://github.com/chrisjashok/assets/blob/main/images/YogaDeck.png?raw=true"
         sx={{ width: "25rem",border:'1px solid #9a3f81', }}
         imgSize="large"
         cardContent={cardContent}
         title="villa"
+        navigateTo={()=>onNavigate(data)}
       />
     </Grid>
   );

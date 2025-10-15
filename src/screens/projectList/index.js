@@ -2,16 +2,62 @@ import Grid from "@mui/material/Grid";
 import React, { useState } from "react";
 import ImgCardList from "../../components/moreDetail/ImgCardList";
 import CustomSelect from "../../hoc/CustomSelect";
-import { Box, Paper, Slider, Typography } from "@mui/material";
+import { Paper, Slider, Typography } from "@mui/material";
 import CustomCheckBoxGrp from "../../hoc/CoustomCheckBoxGrp";
+import { useNavigate } from "react-router-dom";
 // import OverView from "../../components/projectDetail/OverView";
 // import AboutPorject from "../../components/projectDetail/AboutPorject";
 
-export default function ProjectDetail() {
+export default function ProjectList() {
+  const data = [
+    {
+      id: 1,
+      price: 12,
+      discription: "2 BHK home in near guindy",
+      bed: 2,
+      bath: 2,
+    },
+    {
+      id: 2,
+      price: 27,
+      discription: "3 BHK home in near kodambakkam",
+      bed: 3,
+      bath: 2,
+    },
+    {
+      id: 3,
+      price: 15,
+      discription: "2 BHK home in near medavakkam",
+      bed: 1,
+      bath: 2,
+    },
+    {
+      id: 4,
+      price: 17,
+      discription: "2 BHK home in near guindy",
+      bed: 2,
+      bath: 2,
+    },
+    {
+      id: 5,
+      price: 12,
+      discription: "2 BHK home in near kodambakkam",
+      bed: 2,
+      bath: 2,
+    },
+    {
+      id: 6,
+      price: 12,
+      discription: "2 BHK home in near guindy",
+      bed: 2,
+      bath: 2,
+    },
+  ];
+
   const [selected, setSelected] = useState({
     type: "Select BHK",
     location: "Chennai",
-    price: [100000, 20000000],
+    price: [20, 35],
   });
   const [sort, setSort] = useState("Sort");
   const [checked, setChecked] = useState([
@@ -23,11 +69,10 @@ export default function ProjectDetail() {
     { name: "chennai", label: "chennai", checked: false },
     { name: "Hydrabad", label: "Hydrabad", checked: false },
     { name: "Mumbai", label: "Mumbai", checked: false },
+    { name: "kochi", label: "kochi", checked: false },
   ]);
 
-  // const checkbox = ;
-
-  // console.log('checked',checked)
+  const nav = useNavigate();
 
   const handleChange = (e, newvalue) => {
     if (e.target.name === "price") {
@@ -47,31 +92,14 @@ export default function ProjectDetail() {
     setChecked(updatedCheckboxes);
   };
 
-  const handleLocationcheck = (e)=>{
+  const handleLocationcheck = (e) => {
     const { name, checked: isChecked } = e.target;
 
-    const updatedCheckboxes = checked.map((item) =>
+    const updatedCheckboxes = locationbox.map((item) =>
       item.name === name ? { ...item, checked: isChecked } : item
     );
-    setLocationBox(updatedCheckboxes)
-  }
-
-  const renderRange = (
-    <Box px={2} py={1} width={250}>
-      <Typography gutterBottom>
-        Select Range: {100000} - {20000000}
-      </Typography>
-      <Slider
-        name="price"
-        value={selected?.price}
-        onChange={handleChange}
-        valueLabelDisplay="auto"
-        min={100000}
-        max={20000000}
-        sx={{ color: "#9a3f81" }}
-      />
-    </Box>
-  );
+    setLocationBox(updatedCheckboxes);
+  };
 
   return (
     <Grid
@@ -173,7 +201,11 @@ export default function ProjectDetail() {
         container
         size={9}
         spacing={2}
-        sx={{ display: "flex", flexDirection: "row", justifyContent: "center" }}
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+        }}
       >
         <Paper
           variant="outlined"
@@ -213,12 +245,30 @@ export default function ProjectDetail() {
               sx={{ color: "#9a3f81", display: "flex", flexDirection: "row" }}
             />
           </Grid>
+          <Grid size={12} sx={{ padding: "4px 12px" }}>
+            <Typography
+              variant="subtitle1"
+              sx={{ color: "#9a3f81", fontWeight: "700" }}
+              gutterBottom
+            >
+              Price range
+            </Typography>
+            <Slider
+              name="price"
+              value={selected.price}
+              valueLabelDisplay="auto"
+              onChange={handleChange}
+              step={10}
+              min={20}
+              max={90}
+              valueLabelFormat={(value) => `₹${value}`}
+              sx={{color:'#9a3f81'}}
+            />
+          </Grid>
         </Paper>
-        {Array(6)
-          .fill()
-          .map(() => {
-            return <ImgCardList />;
-          })}
+        {data.map((item) => {
+          return <ImgCardList data={item} onNavigate={(param)=>{ nav('/projectdetail',{state:param})}} />;
+        })}
       </Grid>
     </Grid>
   );
