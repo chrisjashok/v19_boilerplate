@@ -41,7 +41,7 @@ export default function ImgCardList({data,onNavigate}) {
   return (
     <Grid container  >
       <Customcard
-        imgURL="https://github.com/chrisjashok/assets/blob/main/images/YogaDeck.png?raw=true"
+        imgURL={data?.image}
         sx={{ width: "25rem",border:'1px solid #9a3f81', }}
         imgSize="large"
         cardContent={cardContent}

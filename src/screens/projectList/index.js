@@ -1,56 +1,108 @@
 import Grid from "@mui/material/Grid";
-import React, { useState } from "react";
-import ImgCardList from "../../components/moreDetail/ImgCardList";
+import { useState } from "react";
+import ImgCardList from "../../components/projectList/ImgCardList";
 import CustomSelect from "../../hoc/CustomSelect";
 import { Paper, Slider, Typography } from "@mui/material";
 import CustomCheckBoxGrp from "../../hoc/CoustomCheckBoxGrp";
 import { useNavigate } from "react-router-dom";
-// import OverView from "../../components/projectDetail/OverView";
-// import AboutPorject from "../../components/projectDetail/AboutPorject";
 
 export default function ProjectList() {
   const data = [
     {
       id: 1,
       price: 12,
+      image:
+        "https://github.com/chrisjashok/assets/blob/main/images/x3BHK-1350.webp?raw=true",
       discription: "2 BHK home in near guindy",
       bed: 2,
       bath: 2,
+      images:[
+        "https://github.com/chrisjashok/assets/blob/main/images/hall.webp?raw=true",
+        "https://github.com/chrisjashok/assets/blob/main/images/kitchen.webp?raw=true",
+        "https://github.com/chrisjashok/assets/blob/main/images/childbedroom.webp?raw=true",
+        "https://github.com/chrisjashok/assets/blob/main/images/sitinout.webp?raw=true",
+        "https://github.com/chrisjashok/assets/blob/main/images/bedroom.webp?raw=true"
+      ]
     },
     {
       id: 2,
       price: 27,
+      image:
+        "https://github.com/chrisjashok/assets/blob/main/images/x3BHK-1365.webp?raw=true",
       discription: "3 BHK home in near kodambakkam",
       bed: 3,
       bath: 2,
+      images:[
+        "https://github.com/chrisjashok/assets/blob/main/images/hall.webp?raw=true",
+        "https://github.com/chrisjashok/assets/blob/main/images/kitchen.webp?raw=true",
+        "https://github.com/chrisjashok/assets/blob/main/images/childbedroom.webp?raw=true",
+        "https://github.com/chrisjashok/assets/blob/main/images/sitinout.webp?raw=true",
+        "https://github.com/chrisjashok/assets/blob/main/images/bedroom.webp?raw=true"
+      ]
     },
     {
       id: 3,
       price: 15,
+      image:
+        "https://github.com/chrisjashok/assets/blob/main/images/x3BHK-1410.webp?raw=true",
       discription: "2 BHK home in near medavakkam",
       bed: 1,
       bath: 2,
+      images:[
+        "https://github.com/chrisjashok/assets/blob/main/images/hall.webp?raw=true",
+        "https://github.com/chrisjashok/assets/blob/main/images/kitchen.webp?raw=true",
+        "https://github.com/chrisjashok/assets/blob/main/images/childbedroom.webp?raw=true",
+        "https://github.com/chrisjashok/assets/blob/main/images/sitinout.webp?raw=true",
+        "https://github.com/chrisjashok/assets/blob/main/images/bedroom.webp?raw=true"
+      ]
     },
     {
       id: 4,
       price: 17,
+      image:
+        "https://github.com/chrisjashok/assets/blob/main/images/x3BHK-1415.webp?raw=true",
       discription: "2 BHK home in near guindy",
       bed: 2,
       bath: 2,
+      images:[
+        "https://github.com/chrisjashok/assets/blob/main/images/hall.webp?raw=true",
+        "https://github.com/chrisjashok/assets/blob/main/images/kitchen.webp?raw=true",
+        "https://github.com/chrisjashok/assets/blob/main/images/childbedroom.webp?raw=true",
+        "https://github.com/chrisjashok/assets/blob/main/images/sitinout.webp?raw=true",
+        "https://github.com/chrisjashok/assets/blob/main/images/bedroom.webp?raw=true"
+      ]
     },
     {
       id: 5,
       price: 12,
+      image:
+        "https://github.com/chrisjashok/assets/blob/main/images/x3BHK-1420.webp?raw=true",
       discription: "2 BHK home in near kodambakkam",
       bed: 2,
       bath: 2,
+      images:[
+        "https://github.com/chrisjashok/assets/blob/main/images/hall.webp?raw=true",
+        "https://github.com/chrisjashok/assets/blob/main/images/kitchen.webp?raw=true",
+        "https://github.com/chrisjashok/assets/blob/main/images/childbedroom.webp?raw=true",
+        "https://github.com/chrisjashok/assets/blob/main/images/sitinout.webp?raw=true",
+        "https://github.com/chrisjashok/assets/blob/main/images/bedroom.webp?raw=true"
+      ]
     },
     {
       id: 6,
       price: 12,
+      image:
+        "https://github.com/chrisjashok/assets/blob/main/images/x3BHK-1425.webp?raw=true",
       discription: "2 BHK home in near guindy",
       bed: 2,
       bath: 2,
+      images:[
+        "https://github.com/chrisjashok/assets/blob/main/images/hall.webp?raw=true",
+        "https://github.com/chrisjashok/assets/blob/main/images/kitchen.webp?raw=true",
+        "https://github.com/chrisjashok/assets/blob/main/images/childbedroom.webp?raw=true",
+        "https://github.com/chrisjashok/assets/blob/main/images/sitinout.webp?raw=true",
+        "https://github.com/chrisjashok/assets/blob/main/images/bedroom.webp?raw=true"
+      ]
     },
   ];
 
@@ -194,9 +246,6 @@ export default function ProjectList() {
           />
         </Grid>
       </Grid>
-      {/* <OverView value={data}  />
-            <AboutPorject/> */}
-
       <Grid
         container
         size={9}
@@ -262,12 +311,19 @@ export default function ProjectList() {
               min={20}
               max={90}
               valueLabelFormat={(value) => `₹${value}`}
-              sx={{color:'#9a3f81'}}
+              sx={{ color: "#9a3f81" }}
             />
           </Grid>
         </Paper>
         {data.map((item) => {
-          return <ImgCardList data={item} onNavigate={(param)=>{ nav('/projectdetail',{state:param})}} />;
+          return (
+            <ImgCardList
+              data={item}
+              onNavigate={(param) => {
+                nav("/projectdetail", { state: param });
+              }}
+            />
+          );
         })}
       </Grid>
     </Grid>

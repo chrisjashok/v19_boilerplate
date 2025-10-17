@@ -1,13 +1,56 @@
 .drawer_box {
-    width: 50;
+  width: 50;
 }
 
 .drawer_card {
-    margin: 1rem 0 0 0;
-    width: 34vw;
-    max-width: 700;
-    overflow-y: auto;
-    max-Height: 60vh;
-    position: absolute;
-    z-Index: 100
+  margin: 1rem 0 0 0;
+  width: 34vw;
+  max-width: 700;
+  overflow-y: auto;
+  max-height: 60vh;
+  position: absolute;
+  z-index: 100;
+}
+
+.img-group-root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #9a3f81;
+  background-color: #9a3f81;
+  border-radius: 1.2rem;
+  padding: 8px 4px;
+}
+
+.img-list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  border: 1px solid #9a3f81;
+}
+
+.img-group-media {
+  height: 100%;
+  width: 80%;
+  border-radius: 1rem;
+}
+
+.img-list-container1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  border: 1px solid #9a3f81;
+}
+
+.img-group-media1 {
+  height: 95%;
+  width: 90%;
+  padding: 4px 6px;
+  border-radius: 1.7rem;
 }

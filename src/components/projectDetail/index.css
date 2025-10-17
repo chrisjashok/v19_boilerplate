@@ -1,62 +1,45 @@
-.overView_root {
+.project-detail_root {
     display: flex;
     flex-direction: row;
-    background-color: rgba(25, 118, 210, 0.274);
-    height: fit-content;
-    width: 70%;
-    border-radius: 0.5em;
-    padding: 1rem;
-     border: 1px solid rgba(25, 118, 210, 0.11);
-    box-shadow:0 0 1.2rem 0  rgba(25, 118, 210, 0.37);
-}
-
-.box {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    height: 6rem;
     width: 100%;
-    /* border: 2px solid red; */
-    padding: 0 1rem 0 1rem;
 }
 
-.title_section {
+.project-description_root {
     display: flex;
-    flex-direction:column;
-    height: 5rem;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #9a3f81;
+    border-radius: 1.2rem;
+    /* height: 33vh; */
+}
+
+.project-description-item {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-       /* border: 2px solid red; */
-
+    padding: 4px 16px;
+    
 }
 
-.iconbtn_section {
+.project-description-Title {
+    font-family: "Montserrat";
+    color: #ffffff;
+}
+
+.project-description-item {
     display: flex;
-    /* flex-direction: row; */
-    position: inherit;
-    height: 5rem;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
-.img_section{
+.project-price-card {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 20rem;
-    width: 40rem;
-}
-
-
-.about_root{
-    display: flex;
-    flex-direction: row;
-    background-color: rgba(25, 118, 210, 0.274);
-    height: fit-content;
-    width: 70%;
-    border-radius: 0.5em;
-    padding: 1rem;
-    border: 1px solid rgba(25, 118, 210, 0.164);
-    box-shadow:0 0 1.2rem 0  rgba(25, 118, 210, 0.37);
+    background-color: #9a3f81;
+    border-radius: 1rem;
+    padding: 8px 12px;
 }
