@@ -1,45 +1,77 @@
 .project-detail_root {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
 }
 
 .project-description_root {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: #9a3f81;
-    border-radius: 1.2rem;
-    /* height: 33vh; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #9a3f81;
+  border-radius: 1.2rem;
+  /* height: 33vh; */
 }
 
 .project-description-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 4px 16px;
-    
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 4px 16px;
 }
 
 .project-description-Title {
-    font-family: "Montserrat";
-    color: #ffffff;
+  font-family: "Montserrat";
+  color: #ffffff;
 }
 
 .project-description-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .project-price-card {
-    display: flex;
-    background-color: #9a3f81;
-    border-radius: 1rem;
-    padding: 8px 12px;
+  display: flex;
+  background-color: #9a3f81;
+  border-radius: 1rem;
+  padding: 8px 12px;
+}
+
+.project-owner-root {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #9a3f81;
+  border-radius: 1.2rem;
+  /* height: 33vh; */
+}
+
+.project-owner-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 4px 16px;
+}
+
+.project-owner-item1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 4px 16px;
+}
+
+.project-owner-img {
+  height: 15%;
+  width: 15%;
+  border-radius: 1.5rem;
+  padding: 1px 12px;
 }
