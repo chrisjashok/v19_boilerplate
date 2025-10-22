@@ -2,12 +2,11 @@ import {
   Button,
   FormControl,
   Grid,
-  InputLabel,
   MenuItem,
   Select,
   TextField,
 } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import "./index.css";
 import { useDispatch, useSelector } from "react-redux";
 import { createUser } from "../../redux/actions/action";
@@ -22,7 +21,7 @@ export default function AddUser({ open, handleClose }) {
     preference: "",
   });
   const dispatch = useDispatch();
-  const { user, loading /*error*/ } = useSelector((state) => state.user);
+  const { user, /*loading,*/ /*error*/ } = useSelector((state) => state.user);
 
   const handleChange = (e) => {
     setFormData({
@@ -32,7 +31,7 @@ export default function AddUser({ open, handleClose }) {
   };
 
   const handleSubmit = (e) => {
-    const { error, value } = userSchema.validate(formData);
+    const { error} = userSchema.validate(formData);
     e.preventDefault();
     // Submit to API or state handler here
     // handleClose();

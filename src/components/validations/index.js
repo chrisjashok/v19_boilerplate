@@ -1,5 +1,4 @@
 import Joi from 'joi';
-import React from 'react'
 
 
  const schema = Joi.defaults((schema) => {

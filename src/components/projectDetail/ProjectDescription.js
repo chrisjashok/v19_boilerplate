@@ -38,7 +38,7 @@ export default function ProjectDescription(props) {
             overflow: "hidden",
             textOverflow: "ellipsis",
             display: "-webkit-box",
-            WebkitLineClamp: view ?  "2" : linecount, // Change '2' to the desired number of lines
+            WebkitLineClamp: view ?  "2" : linecount,
             WebkitBoxOrient: "vertical",
           }}
         >

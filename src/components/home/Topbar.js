@@ -16,7 +16,7 @@ export default function Topbar(params) {
             </Grid>
             <Grid className="logo_container">
                 {/* <Button size='small' variant='contained' className='button' >LOGO</Button> */}
-                 <img src={logo} className='logo' />
+                 <img src={logo} alt={'img'} className='logo' />
             </Grid>
             <Grid className="help">
                 <Button color={color??'inherit'} size='small' variant='text' className='button' >Help</Button>

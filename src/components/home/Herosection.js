@@ -1,7 +1,5 @@
-import React from 'react';
 import "./index.css"
-import { Box, Typography, Button, Container } from '@mui/material';
-import HeroImage from '../../assets/images/download.webp'
+import { Box, Typography, Container } from '@mui/material';
 
 export default function HeroSection() {
 
