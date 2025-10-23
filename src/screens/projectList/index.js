@@ -16,13 +16,13 @@ export default function ProjectList() {
       discription: "2 BHK home in near guindy",
       bed: 2,
       bath: 2,
-      images:[
+      images: [
         "https://github.com/chrisjashok/assets/blob/main/images/hall.webp?raw=true",
         "https://github.com/chrisjashok/assets/blob/main/images/kitchen.webp?raw=true",
         "https://github.com/chrisjashok/assets/blob/main/images/childbedroom.webp?raw=true",
         "https://github.com/chrisjashok/assets/blob/main/images/sitinout.webp?raw=true",
-        "https://github.com/chrisjashok/assets/blob/main/images/bedroom.webp?raw=true"
-      ]
+        "https://github.com/chrisjashok/assets/blob/main/images/bedroom.webp?raw=true",
+      ],
     },
     {
       id: 2,
@@ -32,13 +32,13 @@ export default function ProjectList() {
       discription: "3 BHK home in near kodambakkam",
       bed: 3,
       bath: 2,
-      images:[
+      images: [
         "https://github.com/chrisjashok/assets/blob/main/images/hall.webp?raw=true",
         "https://github.com/chrisjashok/assets/blob/main/images/kitchen.webp?raw=true",
         "https://github.com/chrisjashok/assets/blob/main/images/childbedroom.webp?raw=true",
         "https://github.com/chrisjashok/assets/blob/main/images/sitinout.webp?raw=true",
-        "https://github.com/chrisjashok/assets/blob/main/images/bedroom.webp?raw=true"
-      ]
+        "https://github.com/chrisjashok/assets/blob/main/images/bedroom.webp?raw=true",
+      ],
     },
     {
       id: 3,
@@ -48,13 +48,13 @@ export default function ProjectList() {
       discription: "2 BHK home in near medavakkam",
       bed: 1,
       bath: 2,
-      images:[
+      images: [
         "https://github.com/chrisjashok/assets/blob/main/images/hall.webp?raw=true",
         "https://github.com/chrisjashok/assets/blob/main/images/kitchen.webp?raw=true",
         "https://github.com/chrisjashok/assets/blob/main/images/childbedroom.webp?raw=true",
         "https://github.com/chrisjashok/assets/blob/main/images/sitinout.webp?raw=true",
-        "https://github.com/chrisjashok/assets/blob/main/images/bedroom.webp?raw=true"
-      ]
+        "https://github.com/chrisjashok/assets/blob/main/images/bedroom.webp?raw=true",
+      ],
     },
     {
       id: 4,
@@ -64,13 +64,13 @@ export default function ProjectList() {
       discription: "2 BHK home in near guindy",
       bed: 2,
       bath: 2,
-      images:[
+      images: [
         "https://github.com/chrisjashok/assets/blob/main/images/hall.webp?raw=true",
         "https://github.com/chrisjashok/assets/blob/main/images/kitchen.webp?raw=true",
         "https://github.com/chrisjashok/assets/blob/main/images/childbedroom.webp?raw=true",
         "https://github.com/chrisjashok/assets/blob/main/images/sitinout.webp?raw=true",
-        "https://github.com/chrisjashok/assets/blob/main/images/bedroom.webp?raw=true"
-      ]
+        "https://github.com/chrisjashok/assets/blob/main/images/bedroom.webp?raw=true",
+      ],
     },
     {
       id: 5,
@@ -80,13 +80,13 @@ export default function ProjectList() {
       discription: "2 BHK home in near kodambakkam",
       bed: 2,
       bath: 2,
-      images:[
+      images: [
         "https://github.com/chrisjashok/assets/blob/main/images/hall.webp?raw=true",
         "https://github.com/chrisjashok/assets/blob/main/images/kitchen.webp?raw=true",
         "https://github.com/chrisjashok/assets/blob/main/images/childbedroom.webp?raw=true",
         "https://github.com/chrisjashok/assets/blob/main/images/sitinout.webp?raw=true",
-        "https://github.com/chrisjashok/assets/blob/main/images/bedroom.webp?raw=true"
-      ]
+        "https://github.com/chrisjashok/assets/blob/main/images/bedroom.webp?raw=true",
+      ],
     },
     {
       id: 6,
@@ -96,13 +96,13 @@ export default function ProjectList() {
       discription: "2 BHK home in near guindy",
       bed: 2,
       bath: 2,
-      images:[
+      images: [
         "https://github.com/chrisjashok/assets/blob/main/images/hall.webp?raw=true",
         "https://github.com/chrisjashok/assets/blob/main/images/kitchen.webp?raw=true",
         "https://github.com/chrisjashok/assets/blob/main/images/childbedroom.webp?raw=true",
         "https://github.com/chrisjashok/assets/blob/main/images/sitinout.webp?raw=true",
-        "https://github.com/chrisjashok/assets/blob/main/images/bedroom.webp?raw=true"
-      ]
+        "https://github.com/chrisjashok/assets/blob/main/images/bedroom.webp?raw=true",
+      ],
     },
   ];
 
@@ -320,7 +320,7 @@ export default function ProjectList() {
             <ImgCardList
               data={item}
               onNavigate={(param) => {
-                nav("/projectdetail", { state: param });
+                nav("project_detail", { state: param });
               }}
             />
           );

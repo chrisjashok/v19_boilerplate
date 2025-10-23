@@ -68,10 +68,10 @@ export default function ProjectOwner() {
             }}
           >
             <Typography variant="body2" className="project-description-Title">
-              Listed properties:6
+              Listed properties: 6
             </Typography>
             <Typography variant="body2" className="project-description-Title">
-              verified properties:6
+              verified properties: 6
             </Typography>
           </Grid>
         </Grid>
